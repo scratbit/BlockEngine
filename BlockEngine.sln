@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockEngine", "BlockEngine\BlockEngine.csproj", "{D6033A02-4449-4C4A-A4E3-5E45243078BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6033A02-4449-4C4A-A4E3-5E45243078BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6033A02-4449-4C4A-A4E3-5E45243078BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6033A02-4449-4C4A-A4E3-5E45243078BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6033A02-4449-4C4A-A4E3-5E45243078BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
