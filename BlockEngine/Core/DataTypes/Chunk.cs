@@ -4,30 +4,44 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using OpenTK;
+using OpenTK.Graphics.OpenGL;
+
 namespace BlockEngine.Core.DataTypes
 {
     class Chunk
     {
-        private Block[, ,] _blocks;
-        private Core.Engine.Point3D _chunkCoordinates;
+        public const byte chunkSize = 16;
+        public Block[, ,] _blocks;
+        public Vector3 chunkCoordinates;
 
-        public Chunk(Block[,,] blocks, Core.Engine.Point3D chunkCoordinates)
+        public Chunk(Vector3 chunkCoordinates)
         {
-            this._blocks = blocks;
-            this._chunkCoordinates = chunkCoordinates;
+            this.chunkCoordinates = chunkCoordinates;
+            _blocks = new Block[chunkSize, chunkSize, chunkSize];
+            for (byte fx = 0; fx == chunkSize; fx++)
+            {
+                for (byte fy = 0; fy == chunkSize; fy++)
+                {
+                    for (byte fz = 0; fz == chunkSize; fz++)
+                    {
+                        _blocks[fx, fy, fz].coordinates = new Vector3((float)fx, (float)fy, (float)fz);
+                    }
+                }
+            }
         }
         ~Chunk()
         {
         }
 
-        public Block getBlock(Core.Engine.Point3D BlockCoordinates)
+        public Block getBlock(Vector3 BlockCoordinates)
         {
-            return _blocks[BlockCoordinates.X, BlockCoordinates.Y, BlockCoordinates.Z];
+            return _blocks[(int)BlockCoordinates.X, (int)BlockCoordinates.Y, (int)BlockCoordinates.Z];
         }
 
-        public void setBlock(Core.Engine.Point3D BlockCoordinates, Block block)
+        public void setBlock(Vector3 BlockCoordinates, Block block)
         {
-            _blocks[BlockCoordinates.X, BlockCoordinates.Y, BlockCoordinates.Z] = block;
+            _blocks[(int)BlockCoordinates.X, (int)BlockCoordinates.Y, (int)BlockCoordinates.Z] = block;
         }
     }
 }

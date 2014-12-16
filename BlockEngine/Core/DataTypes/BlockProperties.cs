@@ -32,29 +32,28 @@ namespace BlockEngine.Core.DataTypes
         public BlockT BlockType = BlockT.Solid;
 
         #region Liquid Block Properties
-        public bool Finite;
-        public Engine.Texture InsideLiquidOverlay;
-        public byte WaterSpreadLimit; //Applies only to infinite liquids
-        public byte Density; //Used to tell how fast the player sinks and swims in it. 3 is more like water, 255 would be like thick pudding
+        public Engine.Texture insideLiquidOverlay;
+        public byte density; //Used to tell how fast the player sinks and swims in it. 3 is more like water, 255 would be like thick pudding
+        public byte viscosity;
         #endregion
 
         #region Solid Block Properties
-        public BreakT BlockBreakType;
-        public byte Hardness; //255 would take 15 seconds with the strongest of tools, 2 would break instantly, 1 is unbreakable
-        public bool Walkable; //Is the player able to walk/fall/jump through it? True for yes
-        public DrawT DrawType;
-        public string FormSpec; //This will be used in the modding API later.
+        public BreakT blockBreakType;
+        public byte hardness; //255 would take 15 seconds with the strongest of tools, 2 would break instantly, 1 is unbreakable
+        public bool walkable; //Is the player able to walk/fall/jump through it? True for yes
+        public DrawT drawType;
+        public string formSpec; //This will be used in the modding API later.
         #endregion
 
         #region Global Block Properties
-        public short ID;
-        public string Name;
-        public bool EmitsLight;
-        public bool Transparent;
-        public byte LightLevel;
-        public byte LightColor;
-        public Engine.TextureCube Texture;
-        public bool Flammable;
+        public short id;
+        public string name;
+        public bool emitsLight;
+        public bool transparent;
+        public byte lightLevel;
+        public byte lightColor;
+        public Engine.TextureCube texture;
+        public bool flammable;
         #endregion
 
         public BlockProperties()
@@ -67,23 +66,21 @@ namespace BlockEngine.Core.DataTypes
         /// <param name="Properties"></param>
         public BlockProperties(BlockProperties Properties)
         {
-            this.Finite = Properties.Finite;
-            this.InsideLiquidOverlay = Properties.InsideLiquidOverlay;
-            this.WaterSpreadLimit = Properties.WaterSpreadLimit;
-            this.Density = Properties.Density;
-            this.BlockBreakType = Properties.BlockBreakType;
-            this.Hardness = Properties.Hardness;
-            this.Walkable = Properties.Walkable;
-            this.DrawType = Properties.DrawType;
-            this.FormSpec = Properties.FormSpec;
-            this.ID = Properties.ID;
-            this.Name = Properties.Name;
-            this.EmitsLight = Properties.EmitsLight;
-            this.Transparent = Properties.Transparent;
-            this.LightLevel = Properties.LightLevel;
-            this.LightColor = Properties.LightColor;
-            this.Texture = Properties.Texture;
-            this.Flammable = Properties.Flammable;
+            this.insideLiquidOverlay = Properties.insideLiquidOverlay;
+            this.density = Properties.density;
+            this.blockBreakType = Properties.blockBreakType;
+            this.hardness = Properties.hardness;
+            this.walkable = Properties.walkable;
+            this.drawType = Properties.drawType;
+            this.formSpec = Properties.formSpec;
+            this.id = Properties.id;
+            this.name = Properties.name;
+            this.emitsLight = Properties.emitsLight;
+            this.transparent = Properties.transparent;
+            this.lightLevel = Properties.lightLevel;
+            this.lightColor = Properties.lightColor;
+            this.texture = Properties.texture;
+            this.flammable = Properties.flammable;
         }
     }
 }

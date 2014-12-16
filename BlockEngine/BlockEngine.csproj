@@ -50,13 +50,11 @@
     <Compile Include="Core\DataTypes\Block.cs" />
     <Compile Include="Core\DataTypes\BlockProperties.cs" />
     <Compile Include="Core\DataTypes\Chunk.cs" />
-    <Compile Include="Core\DataTypes\SuperChunk.cs" />
-    <Compile Include="Core\Engine\Point2D.cs" />
-    <Compile Include="Core\Engine\Point3D.cs" />
-    <Compile Include="Core\Engine\Point4D.cs" />
     <Compile Include="Core\Engine\Texture.cs" />
     <Compile Include="Core\Engine\TextureCube.cs" />
+    <Compile Include="Core\Hosts\MouseInputHost.cs" />
     <Compile Include="Core\Hosts\RenderHost.cs" />
+    <Compile Include="Core\Network\Client.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,6 +67,11 @@
     <None Include="v.vertexshader">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="grass.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
